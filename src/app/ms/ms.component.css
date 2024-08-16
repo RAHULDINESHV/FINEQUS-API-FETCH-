@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../assets/pexels-no-name-14543-66997.jpg'); /* Ensure correct filename and path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Common styles for both login and weather sections */
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#tab{color: red;}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Weather data section styles */
+.weather-data-container {
+  margin-left: 100px;
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+  color: black;
+  margin-left: 100px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+td {
+  color: red;
+}
+
+th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.dow {
+  display: block;
+  margin-left: 100px;
+}
+
+.dat {
+  display: block;
+  margin-left: 100px;
+}

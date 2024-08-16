@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('../src/app/assets/pexels-no-name-14543-66997.jpg'); /* Ensure correct filename and path */
+    background-size: cover;
+    background-position: center;
+  }
