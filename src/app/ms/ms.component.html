@@ -1,41 +1,50 @@
 <!-- Login Form -->
-
-  <div class="login-container" *ngIf="!isLoggedIn">
-    <div class="login-box">
-      <h2>Login</h2>
-      <form>
-        <div class="input-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" placeholder="Enter username" [(ngModel)]="username" name="username">
-        </div>
-        <div class="input-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" placeholder="Enter password" [(ngModel)]="password" name="password">
-        </div>
-        <button type="button" (click)="login()">Login</button>
-      </form>
-    </div>
+<div class="login-container" *ngIf="!isLoggedIn">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" [(ngModel)]="username" name="username">
+        <div *ngIf="usernameError" class="error-message">{{ usernameError }}</div>
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" [(ngModel)]="password" name="password">
+        <div *ngIf="passwordError" class="error-message">{{ passwordError }}</div>
+      </div>
+      <button type="button" (click)="login()">Login</button>
+    </form>
   </div>
+</div>
 
-  <!-- Weather Data Section - Shown after login -->
-  <div *ngIf="isLoggedIn">
-    <h2 id="tab">Weather Data</h2>
-    <button class="dat" (click)="getWeatherData()">GET DATA</button>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let field of fields">
-          <td>{{ field.id }}</td>
-          <td>{{ field.name }}</td>
-          <td>{{ field.type }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <button class="dow" (click)="downloadExcel()">Download Excel</button>
-  </div>
+<!-- Weather Data Section - Shown after login -->
+<div *ngIf="isLoggedIn">
+  <h2 id="tab">List of MSME Registered Units under UDYAM </h2>
+  <button class="dat" (click)="getWeatherData()">GET DATA</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>EnterpriseName</th>
+        <th>State</th>
+        <th>District</th>
+        <th>Pincode</th>
+        <th>RegistrationDate</th>
+        <th>MajorActivity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let field of weatherData">
+        <td>{{ field.AID }}</td>
+        <td>{{ field.EnterpriseName }}</td>
+        <td>{{ field.State }}</td>
+        <td>{{ field.District }}</td>
+        <td>{{ field.Pincode }}</td>
+        <td>{{ field.RegistrationDate }}</td>
+        <td>{{ field.MajorActivity }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="dow" (click)="downloadExcel()">Download Excel</button>
+</div>
